@@ -92,21 +92,6 @@ task.wait(0.2)
         end
     end
 })
--------------POSTION--------------
-Tab:AddButton({
-	Name = "Best Area Postion",
-	Callback = function()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
-            CFrame.new()
-  	end    
-})
-Tab:AddButton({
-	Name = "Hatch Egg Postion",
-	Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
-        CFrame.new()
-  	end    
-})
 -------------CLAIM FREE REWARDS--------------
 Tab:AddToggle({
 	Name = "Claim Rewards",
