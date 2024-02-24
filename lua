@@ -82,8 +82,6 @@ Tab:AddToggle({
     if HatchEgg then
         game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Egg Opening Frontend"]:Destroy()
 task.wait(0.2)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
-        CFrame.new(-16.868511199951172, 50.529144287109375, -310.5968322753906)
         while HatchEgg do
                 local argsHatch = {
                     [1] = NameEggHatch,
