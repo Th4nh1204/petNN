@@ -205,35 +205,38 @@ Tab2:AddSection({
 })
 Tab2:AddToggle({
 	Name = "Craft CrystalKey",
-	Default = getgenv().config.CraftCrystalKey,
+	Default = false,
 	Callback = function(crystalkey)
-		getgenv().config.CraftCrystalKey = crystalkey
-            while getgenv().config.CraftCrystalKey do
-            task.wait(0.4)
+		if crystalkey then
+            while crystalkey do
+            task.wait()
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("CrystalKey_Combine"):InvokeServer()
         end
     end
+end
 })
 Tab2:AddToggle({
 	Name = "Craft SecretKey",
-	Default = getgenv().config.CraftSecretKey,
+	Default = false,
 	Callback = function(secretkey)
-		getgenv().config.CraftSecretKey = secretkey
-            while getgenv().config.CraftSecretKey do
-            task.wait(0.4)
+		if secretkey then
+            while secretkey do
+            task.wait()
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("SecretKey_Combine"):InvokeServer()
         end
+    end
 end
 })
 Tab2:AddToggle({
 	Name = "Craft TechKey",
-	Default = getgenv().config.CraftTechKey,
+	Default = false,
 	Callback = function(techkey)
-		getgenv().config.CraftTechKey = techkey
-            while getgenv().config.CraftTechKey do
-            task.wait(0.4)
+		if techkey then
+            while techkey do
+            task.wait()
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("TechKey_Combine"):InvokeServer()
         end
+    end
 end
 })--------------USE KEY----------------------
 Tab2:AddSection({
@@ -241,24 +244,26 @@ Tab2:AddSection({
 })
 Tab2:AddToggle({
 	Name = "Use CrystalKey",
-	Default = getgenv().config.UseCrystalKey,
+	Default = false,
 	Callback = function(crystalkey2)
-		getgenv().config.UseCrystalKey = crystalkey2
-            while getgenv().config.UseCrystalKey do
-            wait(0.5)
+		if crystalkey2 then
+            while crystalkey2 do
+            wait()
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("CrystalKey_Unlock"):InvokeServer()
         end
+    end
 end
 })
 Tab2:AddToggle({
 	Name = "Use TechKey",
-	Default = getgenv().config.UseTechKey,
+	Default = false,
 	Callback = function(techkey2)
-		getgenv().config.UseTechKey = techkey2
-            while getgenv().config.UseTechKey do
-            wait(0.5)
+		if techkey2 then
+            while techkey2 do
+            wait()
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("TechKey_Unlock"):InvokeServer()
         end
+    end
 end
 })
 --------------SPINNY TICKET----------------------
@@ -267,26 +272,28 @@ Tab2:AddSection({
 })
 Tab2:AddToggle({
 	Name = "Spin StarterTicket",
-	Default = getgenv().config.SpinWStarterTicket,
+	Default = false,
 	Callback = function(starterticket)
-		getgenv().config.SpinWStarterTicket = starterticket
-            while getgenv().config.SpinStarterTicket do
+		if starterticket then
+            while starterticket do
             wait(0.5)
             local args = { [1] = "StarterWheel" }
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Spinny Wheel: Request Spin"):InvokeServer(unpack(args))            
         end
+    end
 end
 })
 Tab2:AddToggle({
 	Name = "Spin TechTicket",
-	Default = getgenv().config.SpinTechTicket,
+	Default = false,
 	Callback = function(techticket)
-		getgenv().config.SpinTechTicket = techticket
-            while getgenv().config.SpinTechTicket do
+		if techticket then
+            while techticket do
             wait(0.5)
             local args = { [1] = "TechWheel" }
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Spinny Wheel: Request Spin"):InvokeServer(unpack(args))
         end
+    end
 end
 })
 --------------OPEN GIFT----------------------
@@ -295,38 +302,41 @@ Tab2:AddSection({
 })
 Tab2:AddToggle({
 	Name = "Open CharmStone",
-	Default = getgenv().config.OpenCharmSton,
+	Default = false,
 	Callback = function(CharmStone)
-		getgenv().config.OpenCharmStone = CharmStone
-            while getgenv().config.OpenCharmStone do
+		if CharmStone then
+            while CharmStone do
             wait(0.5)
             local args = { [1] = "Charm Stone" }
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("GiftBag_Open"):InvokeServer(unpack(args))            
         end
+    end
 end
 })
 Tab2:AddToggle({
 	Name = "Open Large GiftBag",
-	Default = getgenv().config.OpenLargeGiftBag,
+	Default = false,
 	Callback = function(LargeBag)
-		getgenv().config.OpenLargeGiftBag = LargeBag
-            while getgenv().config.OpenLargeGiftBag do
+		if LargeBag then
+            while LargeBag do
             wait(0.5)
             local args = { [1] = "Large Gift Bag" }
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("GiftBag_Open"):InvokeServer(unpack(args))            
         end
+    end
 end
 })
 Tab2:AddToggle({
 	Name = "Open GiftBag",
-	Default = getgenv().config.OpenGiftBag,
+	Default = false,
 	Callback = function(GiftBag)
-		getgenv().config.OpenGiftBag = GiftBag
-            while getgenv().config.OpenGiftBag do
+		if GiftBag then
+            while GiftBag do
             wait(0.5)
             local args = { [1] = "Gift Bag" }
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("GiftBag_Open"):InvokeServer(unpack(args))            
         end
+    end
 end
 })
 OrionLib:Init()
