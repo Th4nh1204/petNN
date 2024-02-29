@@ -1,26 +1,3 @@
-getgenv().config = {
-    CollectOrbs = true,
-    CollectLootBags = true,
-    --HATCH
-    CountEggHatch = 1,
-    HatchEgg = false,
-    --MISC
-    ClaimRewards = true,
-    AntiKick = false,
-    ---KEY
-    CraftCrystalKey = true,
-    CraftSecretKey = true,
-    configCraftTechKey = true,
-    UseCrystalKey = false,
-    UseTechKey = false,
-    --Ticket
-    SpinStarterTicket = false,
-    SpinTechTicket = false,
-    --Giftbag
-    OpenCharmStone = false,
-    OpenLargeGiftBag = false,
-    OpenGiftBag = false,
-}
 
 local plp = game:GetService("Players").LocalPlayer.Character
 local humanoidRootPart = plp:WaitForChild("HumanoidRootPart")
@@ -119,16 +96,15 @@ task.wait(0.2)
 -------------CLAIM FREE REWARDS--------------
 Tab:AddToggle({
 	Name = "Claim Rewards",
-	Default = getgenv().config.ClaimRewards,
+	Default = false,
 	Callback = function(claimrewards)
-        getgenv().config.ClaimRewards = claimrewards
-        if getgenv().config.ClaimRewards then
-        while getgenv().config.ClaimRewards do
+        if claimrewards then
+        while claimrewards do
             for i = 1, 12 do
                 local args = { [1] = i }
                 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Redeem Free Gift"):InvokeServer(unpack(args))
+                task.wait(0.5)
             end
-        task.wait(0.5)
         end
     end
 end})
